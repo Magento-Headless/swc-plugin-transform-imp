@@ -20,7 +20,7 @@
   ],
   "main": "swc_plugin_transform_imp.wasm",
   "scripts": {
-    "prepublishOnly": "cargo build --release --target wasm32-wasi && cpx ./target/wasm32-wasi/release/swc_plugin_transform_imp.wasm ."
+    "prepublish": "cargo build --release --target wasm32-wasi && cpx ./target/wasm32-wasi/release/swc_plugin_transform_imp.wasm ."
   },
   "devDependencies": {
     "cpx": "^1.5.0"
