@@ -1,6 +1,6 @@
 {
   "name": "swc-plugin-transform-imp",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "wasm swc transform imp plugin",
   "author": "",
   "license": "MIT",
