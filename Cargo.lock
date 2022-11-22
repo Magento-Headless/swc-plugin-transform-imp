@@ -1267,8 +1267,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "swc-plugin-another-transform-imports"
-version = "0.1.0"
+name = "swc-plugin-transform-imp"
+version = "1.0.0"
 dependencies = [
  "lazy_static",
  "maplit",
