@@ -175,7 +175,7 @@ impl VisitMut for TransformVisitor {
                       ImportDecl {
                         span: import_decl.span.clone(),
                         specifiers: vec![new_spec],
-                        src: transformed_path,
+                        src: Box::new(transformed_path),
                         type_only: import_named_spec.is_type_only,
                         asserts: import_decl.asserts.clone(),
                       },
@@ -195,7 +195,7 @@ impl VisitMut for TransformVisitor {
                         ModuleDecl::Import(ImportDecl {
                           span: import_decl.span.clone(),
                           specifiers: vec![],
-                          src: transformed_path,
+                          src: Box::new(transformed_path),
                           type_only: false,
                           asserts: import_decl.asserts.clone()
                         })
@@ -211,7 +211,7 @@ impl VisitMut for TransformVisitor {
                         specifiers: vec![spec.clone()],
                         src: import_decl.src.clone(),
                         type_only: import_decl.type_only,
-                        asserts: import_decl.asserts.clone()
+                        asserts: import_decl.asserts.clone(),
                       }
                     ));
 
@@ -341,7 +341,7 @@ mod tests {
       }
       "#;
       let configs: HashMap<String, TransformVisitorSubConfig> = serde_json::from_str(configs_str)
-          .expect("parse swc-plugin-transform-imp plugin config failed");
+        .expect("parse swc-plugin-transform-imp plugin config failed");
       transform_visitor(configs)
     },
     base_transform_with_json_config,
